@@ -17,7 +17,7 @@ const createBook = async (req, res) => {
 // get all books
 const getBooks = async (req, res) => {
   try {
-    const books = await bookModel.find({}).sort({ createdAt: -1 });
+    const books = await bookModel.find({}); //.sort({ createdAt: -1 })
     res.status(200).json(books);
   } catch (error) {
     res.status(404).json({ error: "no such books" });
